@@ -2,6 +2,8 @@
 
 > Find all packages inside a directory
 
+[![npm version](https://img.shields.io/npm/v/find-packages.svg)](https://www.npmjs.com/package/find-packages) [![Build Status](https://img.shields.io/travis/zkochan/find-packages/master.svg)](https://travis-ci.org/zkochan/find-packages)
+
 ## Installation
 
 ```
@@ -37,4 +39,4 @@ Patterns to ignore when searching for packages. By default: `**/node_modules/**`
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) © [Zoltan Kochan](http://kochan.io)

@@ -20,7 +20,7 @@ findPackages(process.cwd())
 // [
 //   {
 //     path: "/home/john/src/foo",
-//     pkg: { name: "foo", version: "1.0.0" }
+//     manifest: { name: "foo", version: "1.0.0" }
 //   }
 // ]
 ```

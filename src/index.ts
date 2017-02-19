@@ -27,10 +27,10 @@ export default async function findPkgs (
       .map(path.dirname)
       .map(pkgPath => path.join(root, pkgPath))
       .map(async pkgPath => {
-        let pkg
+        let manifest
         try {
-          pkg = await readPkg(pkgPath, {normalize: false})
-          return { path: pkgPath, pkg }
+          manifest = await readPkg(pkgPath, {normalize: false})
+          return { path: pkgPath, manifest }
         } catch (err) {
           if (err.code === 'ENOENT') {
             return null

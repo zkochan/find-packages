@@ -1,5 +1,7 @@
 # find-packages
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/zkochan/find-packages.svg)](https://greenkeeper.io/)
+
 > Find all packages inside a directory
 
 ## Installation

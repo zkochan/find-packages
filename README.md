@@ -1,5 +1,7 @@
 # find-packages
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/zkochan/find-packages.svg)](https://greenkeeper.io/)
+
 > Find all packages inside a directory
 
 [![npm version](https://img.shields.io/npm/v/find-packages.svg)](https://www.npmjs.com/package/find-packages) [![Build Status](https://img.shields.io/travis/zkochan/find-packages/master.svg)](https://travis-ci.org/zkochan/find-packages)

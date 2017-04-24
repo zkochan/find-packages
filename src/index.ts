@@ -10,7 +10,7 @@ const DEFAULT_IGNORE = [
   '**/tests/**',
 ]
 
-export default async function findPkgs (
+async function findPkgs (
   root: string,
   opts?: { ignore?: string[] }
 ) {
@@ -41,3 +41,8 @@ export default async function findPkgs (
     Boolean
   )
 }
+
+// for backward compatibility
+findPkgs['default'] = findPkgs
+
+export = findPkgs

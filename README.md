@@ -33,6 +33,10 @@ findPkgs(path.join(__dirname, 'test', 'fixture'))
 
 The directory in which to search for packages.
 
+#### `opts`
+
+Parameters normally passed to [glob](https://www.npmjs.com/package/glob)
+
 #### `opts.ignore`
 
 Patterns to ignore when searching for packages. By default: `**/node_modules/**`, `**/bower_components/**`, `**/test/**`, `**/tests/**`.

@@ -3,24 +3,22 @@ import readPkg = require('read-pkg')
 import globby = require('globby')
 import pFilter = require('p-filter')
 
-const DEFAULT_IGNORE = [
-  '**/node_modules/**',
-  '**/bower_components/**',
-  '**/test/**',
-  '**/tests/**',
-]
+const DEFAULT_GLOBBY_OPTIONS = {
+  ignore: [
+    '**/node_modules/**',
+    '**/bower_components/**',
+    '**/test/**',
+    '**/tests/**',
+  ]
+}
 
 async function findPkgs (
   root: string,
   opts?: { ignore?: string[] }
 ) {
-  opts = opts || {}
-  const ignore = opts.ignore || DEFAULT_IGNORE
+  const globbyOpts = Object.assign({}, DEFAULT_GLOBBY_OPTIONS, opts, { cwd: root })
 
-  const paths: string[] = await globby(['**/package.json'], {
-    ignore,
-    cwd: root
-  })
+  const paths: string[] = await globby(['**/package.json'], globbyOpts)
 
   return pFilter(
     paths

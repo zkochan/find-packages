@@ -2,27 +2,27 @@
 
 > Find all packages inside a directory
 
+<!--@shields('npm', 'travis')-->
 [![npm version](https://img.shields.io/npm/v/find-packages.svg)](https://www.npmjs.com/package/find-packages) [![Build Status](https://img.shields.io/travis/zkochan/find-packages/master.svg)](https://travis-ci.org/zkochan/find-packages)
+<!--/@-->
 
 ## Installation
 
-```
+```sh
 npm i -S find-packages
 ```
 
 ## Usage
 
-```typescript
-import findPackages from 'find-packages'
+```js
+const path = require('path')
+const findPkgs = require('find-packages')
 
-findPackages(process.cwd())
+findPkgs(path.join(__dirname, 'test', 'fixture'))
   .then(pkgs => console.log(pkgs))
-// [
-//   {
-//     path: "/home/john/src/foo",
-//     manifest: { name: "foo", version: "1.0.0" }
-//   }
-// ]
+  .catch(err => console.error(err))
+  //> [ { path: '/home/zkochan/src/find-packages/test/fixture/pkg',
+  //      manifest: { name: 'foo', version: '1.0.0' } } ]
 ```
 
 ## API
@@ -39,4 +39,4 @@ Patterns to ignore when searching for packages. By default: `**/node_modules/**`
 
 ## License
 
-[MIT](LICENSE) © [Zoltan Kochan](http://kochan.io)
+[MIT](./LICENSE) © [Zoltan Kochan](http://kochan.io)

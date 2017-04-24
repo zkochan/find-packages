@@ -9,9 +9,10 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "lint": "tslint -c tslint.json --project .",
-    "test": "npm run lint && ts-node test",
+    "test": "npm run lint && ts-node test && mos test",
     "tsc": "tsc",
-    "prepublish": "npm run tsc"
+    "prepublish": "npm run tsc",
+    "md": "mos"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,14 @@
     "find",
     "package"
   ],
+  "mos": {
+    "plugins": [
+      "readme"
+    ],
+    "installation": {
+      "useShortAlias": true
+    }
+  },
   "author": {
     "name": "Zoltan Kochan",
     "email": "zoltan.kochan@gmail.com",
@@ -33,6 +42,8 @@
   "homepage": "https://github.com/zkochan/find-packages#readme",
   "devDependencies": {
     "@types/tape": "^4.2.29",
+    "mos": "^2.0.0-alpha.3",
+    "mos-plugin-readme": "^1.0.4",
     "tape": "^4.6.3",
     "ts-node": "^3.0.1",
     "tslint": "^5.0.0",

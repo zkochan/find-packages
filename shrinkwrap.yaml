@@ -2010,7 +2010,7 @@ packages:
 registry: 'https://registry.npmjs.org/'
 shrinkwrapVersion: 3
 specifiers:
-  '@types/node': ^8.0.0
+  '@types/node': ^8.0.33
   '@types/tape': ^4.2.29
   globby: ^6.1.0
   mos: ^2.0.0-alpha.3

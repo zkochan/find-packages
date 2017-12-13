@@ -1,5 +1,5 @@
 import test = require('tape')
-import findPackages from '../src'
+import findPackages from 'find-packages'
 import path = require('path')
 
 test('finds package', async t => {

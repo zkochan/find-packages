@@ -1,5 +1,5 @@
 const path = require('path')
-const findPkgs = require('./lib')
+const findPkgs = require('find-packages')
 
 findPkgs(path.join(__dirname, 'test', 'fixture'))
   .then(pkgs => console.log(pkgs))

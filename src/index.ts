@@ -1,7 +1,7 @@
-import path = require('path')
-import readPkg = require('read-pkg')
 import globby = require('globby')
 import pFilter = require('p-filter')
+import path = require('path')
+import readPkg = require('read-pkg')
 
 const DEFAULT_IGNORE = [
   '**/node_modules/**',
@@ -12,19 +12,19 @@ const DEFAULT_IGNORE = [
 
 async function findPkgs (
   root: string,
-  opts?: { ignore?: string[] }
+  opts?: { ignore?: string[] },
 ) {
   opts = opts || {}
-  const globbyOpts = Object.assign({}, opts, { cwd: root })
-  globbyOpts['ignore'] = opts.ignore || DEFAULT_IGNORE
+  const globbyOpts = {...opts, cwd: root }
+  globbyOpts.ignore = opts.ignore || DEFAULT_IGNORE
 
   const paths: string[] = await globby(['**/package.json'], globbyOpts)
 
   return pFilter(
     paths
       .map(path.dirname)
-      .map(pkgPath => path.join(root, pkgPath))
-      .map(async pkgPath => {
+      .map((pkgPath) => path.join(root, pkgPath))
+      .map(async (pkgPath) => {
         let manifest
         try {
           manifest = await readPkg(pkgPath, {normalize: false})
@@ -36,11 +36,11 @@ async function findPkgs (
           throw err
         }
       }),
-    Boolean
+    Boolean,
   )
 }
 
 // for backward compatibility
-findPkgs['default'] = findPkgs
+findPkgs['default'] = findPkgs // tslint:disable-line
 
 export = findPkgs

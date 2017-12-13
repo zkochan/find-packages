@@ -9,7 +9,7 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "lint": "tslint -c tslint.json --project .",
-    "test": "npm run lint && ts-node test && mos test",
+    "test": "npm run lint && ts-node test --type-check && mos test",
     "tsc": "tsc",
     "prepublish": "npm run tsc",
     "md": "mos"
@@ -45,13 +45,13 @@
     "mos": "^2.0.0-alpha.3",
     "mos-plugin-readme": "^1.0.4",
     "tape": "^4.6.3",
-    "ts-node": "^3.0.1",
+    "ts-node": "^4.0.1",
     "tslint": "^5.0.0",
     "typescript": "^2.1.6"
   },
   "dependencies": {
     "@types/node": "^8.0.33",
-    "globby": "^6.1.0",
+    "globby": "^7.1.1",
     "p-filter": "^1.0.0",
     "read-pkg": "^3.0.0"
   }

@@ -12,13 +12,19 @@ const DEFAULT_IGNORE = [
 
 async function findPkgs (
   root: string,
-  opts?: { ignore?: string[] },
+  opts?: {
+    ignore?: string[],
+    patterns?: string[],
+  },
 ) {
   opts = opts || {}
   const globOpts = {...opts, cwd: root }
   globOpts.ignore = opts.ignore || DEFAULT_IGNORE
+  globOpts.patterns = opts.patterns
+    ? normalizePatterns(opts.patterns)
+    : ['**/package.json']
 
-  const paths: string[] = await fastGlob(['**/package.json'], globOpts)
+  const paths: string[] = await fastGlob(globOpts.patterns, globOpts)
 
   return pFilter(
     paths
@@ -38,6 +44,10 @@ async function findPkgs (
       }),
     Boolean,
   )
+}
+
+function normalizePatterns (patterns: string[]) {
+  return patterns.map((pattern) => pattern.replace(/\/?$/, '/package.json'))
 }
 
 // for backward compatibility

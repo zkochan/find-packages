@@ -37,6 +37,10 @@ The directory in which to search for packages.
 
 Parameters normally passed to [glob](https://www.npmjs.com/package/glob)
 
+#### `opts.patterns`
+
+Array of globs to use as package locations. For example: `['packages/**', 'utils/**']`.
+
 #### `opts.ignore`
 
 Patterns to ignore when searching for packages. By default: `**/node_modules/**`, `**/bower_components/**`, `**/test/**`, `**/tests/**`.

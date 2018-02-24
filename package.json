@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "@types/node": "^9.4.6",
-    "globby": "^8.0.1",
+    "fast-glob": "^2.0.4",
     "p-filter": "^1.0.0",
     "read-pkg": "^3.0.0"
   }

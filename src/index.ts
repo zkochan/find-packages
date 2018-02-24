@@ -1,4 +1,4 @@
-import globby = require('globby')
+import fastGlob = require('fast-glob')
 import pFilter = require('p-filter')
 import path = require('path')
 import readPkg = require('read-pkg')
@@ -15,10 +15,10 @@ async function findPkgs (
   opts?: { ignore?: string[] },
 ) {
   opts = opts || {}
-  const globbyOpts = {...opts, cwd: root }
-  globbyOpts.ignore = opts.ignore || DEFAULT_IGNORE
+  const globOpts = {...opts, cwd: root }
+  globOpts.ignore = opts.ignore || DEFAULT_IGNORE
 
-  const paths: string[] = await globby(['**/package.json'], globbyOpts)
+  const paths: string[] = await fastGlob(['**/package.json'], globOpts)
 
   return pFilter(
     paths

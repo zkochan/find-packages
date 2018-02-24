@@ -1,4 +1,4 @@
-declare module 'globby' {
+declare module 'fast-glob' {
   const anything: any;
   export = anything;
 }

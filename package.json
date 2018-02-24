@@ -49,13 +49,13 @@
     "mos-plugin-readme": "^1.0.4",
     "package-preview": "^1.0.3",
     "tape": "^4.6.3",
-    "ts-node": "^4.0.1",
+    "ts-node": "^5.0.0",
     "tslint": "^5.0.0",
     "typescript": "^2.1.6"
   },
   "dependencies": {
-    "@types/node": "^8.0.33",
-    "globby": "^7.1.1",
+    "@types/node": "^9.4.6",
+    "globby": "^8.0.1",
     "p-filter": "^1.0.0",
     "read-pkg": "^3.0.0"
   }

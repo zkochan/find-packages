@@ -54,7 +54,7 @@
     "typescript": "^3.0.0"
   },
   "dependencies": {
-    "@types/node": "^9.4.6",
+    "@types/node": "^10.12.18",
     "fast-glob": "^2.0.4",
     "p-filter": "^1.0.0",
     "read-pkg": "^4.0.0"

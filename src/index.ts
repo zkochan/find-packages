@@ -33,7 +33,7 @@ async function findPkgs (
       .map(async (pkgPath) => {
         let manifest
         try {
-          manifest = await readPkg(pkgPath, {normalize: false})
+          manifest = await readPkg({ cwd: pkgPath, normalize: false })
           return { path: pkgPath, manifest }
         } catch (err) {
           if (err.code === 'ENOENT') {

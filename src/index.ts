@@ -1,7 +1,7 @@
+import { fromDir as readPackageJsonFromDir } from '@pnpm/read-package-json'
 import fastGlob = require('fast-glob')
 import pFilter = require('p-filter')
 import path = require('path')
-import readPkg = require('read-pkg')
 
 const DEFAULT_IGNORE = [
   '**/node_modules/**',
@@ -33,7 +33,7 @@ async function findPkgs (
       .map(async (pkgPath) => {
         let manifest
         try {
-          manifest = await readPkg({ cwd: pkgPath, normalize: false })
+          manifest = await readPackageJsonFromDir(pkgPath)
           return { path: pkgPath, manifest }
         } catch (err) {
           if (err.code === 'ENOENT') {

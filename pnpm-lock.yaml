@@ -12,6 +12,7 @@ devDependencies:
   ts-node: 8.0.3
   tslint: 5.14.0
   typescript: 3.3.3333
+lockfileVersion: 5
 packages:
   /@mrmlnc/readdir-enhanced/2.2.1:
     dependencies:
@@ -3745,9 +3746,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-+Wo/p5VRfxUgBUGy2j/6KX2mj9AYJWOHuhMjMcbBFc3y54o9/4buK1ksBvuiK01C3kby8DH9lSmJdSxw+4G/2Q==
-registry: 'https://registry.npmjs.org/'
-shrinkwrapMinorVersion: 9
-shrinkwrapVersion: 3
 specifiers:
   '@pnpm/read-package-json': ^2.0.0
   '@types/node': ^10.12.18

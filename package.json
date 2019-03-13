@@ -11,7 +11,7 @@
     "lint": "tslint -c tslint.json --project .",
     "test": "npm run lint && preview && ts-node test --type-check && mos test",
     "tsc": "tsc",
-    "prepublish": "npm run tsc",
+    "prepublishOnly": "npm run tsc",
     "md": "mos"
   },
   "repository": {

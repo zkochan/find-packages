@@ -56,7 +56,7 @@
   "dependencies": {
     "@pnpm/read-package-json": "^2.0.0",
     "@types/node": "^10.12.18",
-    "fast-glob": "^2.0.4",
+    "fast-glob": "^3.0.0",
     "p-filter": "^2.0.0"
   }
 }

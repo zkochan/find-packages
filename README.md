@@ -1,3 +1,5 @@
+> this package is moved to the [pnpm repo](https://github.com/pnpm/pnpm/tree/master/packages/find-packages)
+
 # find-packages
 
 > Find all packages inside a directory
